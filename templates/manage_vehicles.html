@@ -1,0 +1,6 @@
+{% extends 'base.html' %} {% block content %}
+<h4>Manage Vehicles</h4>
+<table class="table"><thead><tr><th>ID</th><th>Model</th><th>Type</th><th>Rate</th></tr></thead><tbody>
+{% for v in vehicles %}<tr><td>{{ v.vehicle_id }}</td><td>{{ v.model }}</td><td>{{ v.vehicle_type }}</td><td>₹{{ v.rent_rate }}</td></tr>{% endfor %}
+</tbody></table>
+{% endblock %}

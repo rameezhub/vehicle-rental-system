@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Your Bookings</h3>
+<table class="table">
+<thead><tr><th>ID</th><th>Vehicle</th><th>From</th><th>To</th><th>Status</th></tr></thead>
+<tbody>
+  {% for b in bookings %}
+  <tr>
+    <td>{{ b.reservation_id }}</td>
+    <td>{{ b.model }} ({{ b.registration_no }})</td>
+    <td>{{ b.start_date }}</td>
+    <td>{{ b.end_date }}</td>
+    <td>{{ b.status }}</td>
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+{% endblock %}

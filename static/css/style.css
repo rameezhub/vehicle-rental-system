@@ -1,0 +1,5 @@
+body { background:#f6f7fb; }
+.navbar-brand { color:#1f7a5f !important; font-weight:700; }
+.card { border-radius:12px; transition:transform .2s ease; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+.btn-success { background: #2fb86f; border-color: #2fb86f; }

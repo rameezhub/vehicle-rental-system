@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="text-center mb-4">Add New Customer</h2>
+<form method="POST" class="p-4 border rounded bg-white shadow-sm">
+  <div class="row">
+    <div class="col-md-6 mb-3"><input type="text" name="first_name" class="form-control" placeholder="First Name" required></div>
+    <div class="col-md-6 mb-3"><input type="text" name="last_name" class="form-control" placeholder="Last Name" required></div>
+  </div>
+  <div class="mb-3"><input type="email" name="email" class="form-control" placeholder="Email" required></div>
+  <div class="mb-3"><input type="text" name="phone" class="form-control" placeholder="Phone" required></div>
+  <div class="mb-3"><input type="text" name="address" class="form-control" placeholder="Address" required></div>
+  <div class="row">
+    <div class="col-md-6 mb-3"><input type="text" name="city" class="form-control" placeholder="City" required></div>
+    <div class="col-md-6 mb-3"><input type="text" name="state" class="form-control" placeholder="State" required></div>
+  </div>
+  <div class="mb-3"><input type="text" name="license" class="form-control" placeholder="License No." required></div>
+  <button type="submit" class="btn btn-primary w-100">Add Customer</button>
+</form>
+{% endblock %}

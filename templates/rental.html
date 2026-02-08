@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Rental</title>
+</head>
+<body>
+    <h1>Generate Rental</h1>
+    <form method="POST">
+        <label>Reservation:</label>
+        <select name="reservation_id">
+            {% for r in reservations %}
+            <option value="{{ r.reservation_id }}">Reservation #{{ r.reservation_id }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Staff:</label>
+        <select name="staff_id">
+            {% for s in staff %}
+            <option value="{{ s.staff_id }}">{{ s.name }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label>Total Amount:</label>
+        <input type="text" name="total_amount"><br><br>
+
+        <label>Return Date:</label>
+        <input type="date" name="return_date"><br><br>
+
+        <button type="submit">Generate</button>
+    </form>
+</body>
+</html>

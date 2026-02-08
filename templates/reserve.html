@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %}
+<div class="mx-auto" style="max-width:600px">
+  <h4>Reserve: {{ vehicle.model }}</h4>
+  <form method="post" class="bg-white p-3 rounded shadow-sm">
+    <label>Start Date</label><input name="start_date" type="date" class="form-control mb-2" required>
+    <label>End Date</label><input name="end_date" type="date" class="form-control mb-2" required>
+    <button class="btn btn-success">Confirm Reservation</button>
+  </form>
+</div>
+{% endblock %}

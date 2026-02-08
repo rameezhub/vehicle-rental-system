@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+  {% for v in vehicles %}
+  <div class="col-md-4 mb-4">
+    <div class="card h-100">
+      <img src="{{ url_for('static', filename='images/' ~ v.image) }}" class="card-img-top" style="height:200px; object-fit:cover;">
+      <div class="card-body">
+        <h5 class="card-title">{{ v.model }} <small class="text-muted">({{ v.vehicle_type }})</small></h5>
+        <p class="small text-muted mb-1">Available at <strong>{{ v.location }}</strong></p>
+        <p class="text-success fw-bold">₹ {{ v.rent_rate }} / Day</p>
+        <div class="d-flex justify-content-end">
+          <button class="btn btn-outline-primary btn-sm" onclick="openVehicle('{{ v.vehicle_id }}')">View</button>
+          <a href="{{ url_for('reserve', vid=v.vehicle_id) }}" class="btn btn-success btn-sm ms-1">Rent Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<div id="vehicleModalContainer"></div>
+{% endblock %}

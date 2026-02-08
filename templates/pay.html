@@ -1,0 +1,17 @@
+{% extends 'base.html' %}{% block content %}
+<div class="mx-auto" style="max-width:500px">
+  <h4>Pay for {{ r.model }}</h4>
+  <form method="post" class="bg-white p-3 rounded shadow-sm">
+    <p>Rate: ₹{{ r.rent_rate }}/day</p>
+    <label>Amount</label>
+    <input name="amount" class="form-control mb-2" value="{{ r.rent_rate }}" required>
+    <label>Payment Mode</label>
+    <select name="mode" class="form-select mb-3">
+      <option>Cash</option>
+      <option>Credit Card</option>
+      <option>UPI</option>
+    </select>
+    <button class="btn btn-success w-100">Make Payment</button>
+  </form>
+</div>
+{% endblock %}

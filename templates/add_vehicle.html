@@ -1,0 +1,15 @@
+{% extends 'base.html' %}{% block content %}
+<div class="mx-auto" style="max-width:700px">
+  <h4>Add Vehicle</h4>
+  <form method="post" class="bg-white p-3 rounded shadow-sm">
+    <input name="vehicle_type" class="form-control mb-2" placeholder="Type (Car/Bike)" required>
+    <input name="model" class="form-control mb-2" placeholder="Model" required>
+    <input name="rent_rate" class="form-control mb-2" placeholder="Rent per day" required>
+    <input name="registration_no" class="form-control mb-2" placeholder="Registration No" required>
+    <input name="fuel_type" class="form-control mb-2" placeholder="Fuel type">
+    <input name="location" class="form-control mb-2" placeholder="Location">
+    <input name="image" class="form-control mb-2" placeholder="Image filename (car.jpg)">
+    <button class="btn btn-primary w-100">Add Vehicle</button>
+  </form>
+</div>
+{% endblock %}

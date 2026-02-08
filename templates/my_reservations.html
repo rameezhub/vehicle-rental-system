@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4>My Reservations</h4>
+
+{% if reservations %}
+<table class="table align-middle">
+  <thead>
+    <tr>
+      <th>ID</th><th>Vehicle</th><th>Dates</th><th>Payment</th><th>Status</th><th></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for r in reservations %}
+  <tr>
+    <td>{{ r.reservation_id }}</td>
+    <td>{{ r.model }} ({{ r.vehicle_type }})</td>
+    <td>{{ r.start_date }} → {{ r.end_date }}</td>
+    <td>
+      {% if r.payment_status == 'paid' %}
+        <span class="badge bg-success">Paid</span>
+      {% else %}
+        <span class="badge bg-warning text-dark">Pending</span>
+      {% endif %}
+    </td>
+    <td>{{ r.status }}</td>
+    <td>
+      {% if r.payment_status != 'paid' %}
+        <a href="{{ url_for('pay', rid=r.reservation_id) }}" class="btn btn-sm btn-success">Pay</a>
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+  <div class="alert alert-info">No reservations found.</div>
+{% endif %}
+{% endblock %}

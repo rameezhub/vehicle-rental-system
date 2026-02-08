@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="mx-auto text-center mt-5" style="max-width:600px">
+  <div class="card p-4 shadow-sm border-success">
+    <h3 class="text-success mb-3">✅ Payment Successful!</h3>
+    <h5>{{ p.model }} ({{ p.vehicle_type }})</h5>
+    <p>Amount Paid: <strong>₹ {{ p.amount }}</strong></p>
+    <p>Payment Mode: {{ p.mode }}</p>
+    <p>Status: <span class="badge bg-success">{{ p.status }}</span></p>
+    <p>Date: {{ p.payment_date }}</p>
+    <a href="{{ url_for('my_reservations') }}" class="btn btn-outline-success mt-3">Back to My Reservations</a>
+  </div>
+</div>
+{% endblock %}

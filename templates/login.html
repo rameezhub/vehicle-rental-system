@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %}
+<div class="mx-auto" style="max-width:420px">
+  <h4>Login</h4>
+  <form method="post" class="bg-white p-3 rounded shadow-sm">
+    <input name="username" class="form-control mb-2" placeholder="Username" required>
+    <input name="password" type="password" class="form-control mb-2" placeholder="Password" required>
+    <button class="btn btn-success w-100">Login</button>
+  </form>
+</div>
+{% endblock %}

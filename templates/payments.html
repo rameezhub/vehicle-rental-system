@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Payments</h3>
+<form method="post" class="mb-4 p-3 bg-white rounded shadow-sm">
+  <div class="row">
+    <div class="col-md-4 mb-2"><input name="reservation_id" class="form-control" placeholder="Reservation ID" required></div>
+    <div class="col-md-4 mb-2"><input name="amount" class="form-control" placeholder="Amount" required></div>
+    <div class="col-md-4 mb-2"><input name="mode" class="form-control" placeholder="Mode (card/cash)"></div>
+  </div>
+  <button class="btn btn-success">Pay</button>
+</form>
+
+<table class="table">
+  <thead><tr><th>ID</th><th>Reservation</th><th>Amount</th><th>Date</th></tr></thead>
+  <tbody>
+    {% for p in payments %}
+    <tr><td>{{ p.payment_id }}</td><td>{{ p.model }}</td><td>₹ {{ p.amount }}</td><td>{{ p.payment_date }}</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
